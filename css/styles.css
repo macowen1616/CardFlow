@@ -455,50 +455,79 @@ dd{ margin:0; }
   .details{ grid-template-columns: 1fr; }
 }
 
-/* Dark neon overrides */
-body{
-  background:var(--bg);
-  color:var(--ink);
+/* Dark clean neon overrides */
+body {
+  background: var(--bg);
+  color: var(--ink);
 }
-.topbar{
-  background:linear-gradient(90deg, rgba(0,0,0,0.18), rgba(0,0,0,0.06));
-  border-bottom-color: rgba(0,229,255,0.06);
+.topbar {
+  background: linear-gradient(90deg, rgba(0,0,0,0.18), rgba(0,0,0,0.06));
+  border-bottom-color: rgba(0,180,200,0.06);
   box-shadow: var(--glow-primary);
 }
-.logo{
-  border-color: rgba(0,229,255,0.18);
+.logo {
+  border-color: rgba(0,180,200,0.18);
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
 }
-.brand-name{ color: var(--primary); text-shadow: 0 0 8px rgba(0,229,255,0.16); }
-.nav-link{ color:var(--muted); }
-.nav-link.active{ background: rgba(0,229,255,0.06); outline-color: rgba(0,229,255,0.12); }
+.brand-name {
+  color: var(--primary);
+  text-shadow: 0 0 6px rgba(0,180,200,0.16);
+}
+.nav-link { color: var(--muted); }
+.nav-link.active {
+  background: rgba(0,180,200,0.06);
+  outline-color: rgba(0,180,200,0.12);
+}
 
-.page{ background:transparent; }
-.panel{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.16)); border-color: rgba(0,229,255,0.06); }
+.page { background: transparent; }
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+  border-color: rgba(0,180,200,0.06);
+}
 
-.card{ background: var(--card-bg); border-color: rgba(0,229,255,0.06); }
-.card:hover{ outline:3px solid rgba(0,229,255,0.08); box-shadow: 0 6px 28px rgba(0,229,255,0.03); }
-.card-num{ color:var(--primary); }
+.card { background: var(--card-bg); border-color: rgba(0,180,200,0.06); }
+.card:hover {
+  outline: 2px solid rgba(0,180,200,0.08);
+  box-shadow: 0 4px 18px rgba(0,180,200,0.03);
+}
+.card-num { color: var(--primary); }
 
-.thumb{ background: linear-gradient(180deg, #061020, #04101a); }
-.thumb img{ object-fit:contain; }
+.thumb { background: linear-gradient(180deg, #081020, #041018); }
+.thumb img { object-fit: contain; }
 
-.btn{ background:var(--btn); color:var(--btn-ink); border-color: rgba(255,255,255,0.04); }
-.btn.primary{ background: linear-gradient(90deg,var(--primary),var(--accent)); color:#000; box-shadow: 0 0 18px rgba(0,229,255,0.12); border-color: transparent; }
-.btn.danger{ color:var(--danger); border-color: rgba(255,77,109,0.12); }
+.btn {
+  background: var(--btn);
+  color: var(--btn-ink);
+  border-color: rgba(255,255,255,0.04);
+}
+.btn.primary {
+  background: linear-gradient(90deg, #00b4c6, #8a5fff);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(0,180,200,0.12);
+  border-color: transparent;
+}
+.btn.danger {
+  color: var(--danger);
+  border-color: rgba(255,77,109,0.12);
+}
 
-.details-image{ background:#000; border-color: rgba(0,229,255,0.06); }
-.details-info{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12)); border-color: rgba(0,229,255,0.04); }
-.dl > div{ background: rgba(255,255,255,0.02); border-color: rgba(0,229,255,0.04); }
+.details-image { background: #000; border-color: rgba(0,180,200,0.06); }
+.details-info {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+  border-color: rgba(0,180,200,0.04);
+}
+.dl > div { background: rgba(255,255,255,0.02); border-color: rgba(0,180,200,0.04); }
 
-.ph{ color:var(--muted); }
+.ph { color: var(--muted); }
 
-/* reduce bright outlines on inputs */
-input, select, textarea{ background: rgba(255,255,255,0.02); color:var(--ink); border-color: rgba(255,255,255,0.04); }
+input, select, textarea {
+  background: rgba(255,255,255,0.02);
+  color: var(--ink);
+  border-color: rgba(255,255,255,0.04);
+}
 
-/* Specific background for Series / Expansion selects and rarity selects */
 #seriesSelect, #expansionSelect, #editRarity, select[name="rarity"] {
-  background: #050714; /* requested color */
+  background: #050714;
   color: var(--ink);
   border-color: rgba(255,255,255,0.04);
 }
@@ -507,24 +536,20 @@ input, select, textarea{ background: rgba(255,255,255,0.02); color:var(--ink); b
   color: var(--ink);
 }
 
-
-/* ====== Neon Street + Fogged Glass Background ====== */
-
-/* Page base */
+/* ====== Cleaner Neon Street + Fogged Glass Background ====== */
 .neon-street {
   min-height: 100vh;
   margin: 0;
   color: #e9e9ff;
-  background: radial-gradient(1200px 800px at 50% 20%, rgba(95, 46, 255, 0.25), rgba(0,0,0,0) 60%),
-              radial-gradient(900px 700px at 20% 70%, rgba(0, 255, 255, 0.12), rgba(0,0,0,0) 55%),
-              radial-gradient(900px 700px at 80% 75%, rgba(255, 0, 160, 0.10), rgba(0,0,0,0) 55%),
+  background: radial-gradient(1200px 800px at 50% 20%, rgba(70,180,200,0.18), rgba(0,0,0,0) 60%),
+              radial-gradient(900px 700px at 20% 70%, rgba(140,80,255,0.12), rgba(0,0,0,0) 55%),
+              radial-gradient(900px 700px at 80% 75%, rgba(180,255,230,0.08), rgba(0,0,0,0) 55%),
               linear-gradient(180deg, #05060a 0%, #050512 40%, #03030a 100%);
   overflow-x: hidden;
   position: relative;
   isolation: isolate;
 }
 
-/* Background effects layer */
 .bg-effects {
   position: fixed;
   inset: 0;
@@ -532,94 +557,80 @@ input, select, textarea{ background: rgba(255,255,255,0.02); color:var(--ink); b
   pointer-events: none;
 }
 
-/* 1) Moving neon “street lights” streaks */
+/* Street streaks animation (slower, smoother) */
 .bg-effects::before {
   content: "";
   position: absolute;
   inset: -20%;
   background:
-    /* street perspective streaks */
     repeating-linear-gradient(
       110deg,
-      rgba(0, 255, 255, 0.00) 0%,
-      rgba(0, 255, 255, 0.00) 6%,
-      rgba(0, 255, 255, 0.18) 7%,
-      rgba(0, 255, 255, 0.00) 10%
+      rgba(0,180,200,0.00) 0%,
+      rgba(0,180,200,0.00) 8%,
+      rgba(0,180,200,0.12) 9%,
+      rgba(0,180,200,0.00) 12%
     ),
     repeating-linear-gradient(
       70deg,
-      rgba(255, 0, 170, 0.00) 0%,
-      rgba(255, 0, 170, 0.00) 7%,
-      rgba(255, 0, 170, 0.16) 8%,
-      rgba(255, 0, 170, 0.00) 12%
+      rgba(140,80,255,0.00) 0%,
+      rgba(140,80,255,0.00) 9%,
+      rgba(140,80,255,0.10) 10%,
+      rgba(140,80,255,0.00) 14%
     );
-  filter: blur(2px);
-  opacity: 0.65;
-  transform: translate3d(0,0,0);
-  animation: street-drift 14s linear infinite;
+  filter: blur(1.5px);
+  opacity: 0.6;
+  animation: street-drift-clean 18s ease-in-out infinite alternate;
 }
 
-@keyframes street-drift {
-  0%   { transform: translate3d(-6%, -2%, 0) scale(1.05); }
-  100% { transform: translate3d( 6%,  2%, 0) scale(1.05); }
+@keyframes street-drift-clean {
+  0%   { transform: translate3d(-4%, -2%, 0) scale(1.02); }
+  100% { transform: translate3d(4%, 2%, 0) scale(1.02); }
 }
 
-/* 2) Neon “sign” blobs + fog haze + grain */
+/* Neon blobs + fog + subtle grain */
 .bg-effects::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    /* neon sign glows */
-    radial-gradient(500px 240px at 15% 25%, rgba(0, 255, 255, 0.20), rgba(0,0,0,0) 60%),
-    radial-gradient(420px 220px at 85% 30%, rgba(255, 0, 170, 0.18), rgba(0,0,0,0) 62%),
-    radial-gradient(520px 300px at 55% 80%, rgba(140, 80, 255, 0.15), rgba(0,0,0,0) 65%),
-
-    /* fog layer */
-    radial-gradient(900px 700px at 50% 55%, rgba(255,255,255,0.06), rgba(255,255,255,0) 70%),
-
-    /* grain/noise (CSS-only approximation) */
+    radial-gradient(500px 240px at 15% 25%, rgba(0,180,200,0.18), rgba(0,0,0,0) 60%),
+    radial-gradient(420px 220px at 85% 30%, rgba(140,80,255,0.15), rgba(0,0,0,0) 62%),
+    radial-gradient(520px 300px at 55% 80%, rgba(180,255,230,0.12), rgba(0,0,0,0) 65%),
+    radial-gradient(900px 700px at 50% 55%, rgba(255,255,255,0.04), rgba(255,255,255,0) 70%),
     repeating-linear-gradient(
       0deg,
-      rgba(255,255,255,0.02) 0px,
-      rgba(255,255,255,0.02) 1px,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 1px,
       rgba(0,0,0,0.00) 2px,
       rgba(0,0,0,0.00) 4px
     );
   mix-blend-mode: screen;
-  opacity: 0.95;
-  filter: blur(0px);
-  animation: neon-pulse 6.5s ease-in-out infinite;
+  opacity: 0.9;
+  animation: neon-pulse-clean 8s ease-in-out infinite;
 }
 
-@keyframes neon-pulse {
+@keyframes neon-pulse-clean {
   0%, 100% { opacity: 0.85; filter: blur(0px); }
-  50%      { opacity: 1;    filter: blur(1px); }
+  50%      { opacity: 0.95; filter: blur(0.5px); }
 }
 
-/* ====== Fogged Glass Panel (use on your main containers) ====== */
+/* Fogged Glass Panel */
 .glass-panel {
   width: min(1100px, 92vw);
   margin: 5rem auto;
   padding: 2rem;
   border-radius: 22px;
-
-  /* frosted look */
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
   box-shadow:
-    0 20px 60px rgba(0,0,0,0.55),
-    0 0 0 1px rgba(255,255,255,0.06) inset;
-
-  /* the “fogged glass” */
-  backdrop-filter: blur(18px) saturate(130%);
-  -webkit-backdrop-filter: blur(18px) saturate(130%);
-
+    0 18px 50px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,255,255,0.05) inset;
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
   position: relative;
   overflow: hidden;
 }
 
-/* Optional: subtle inner neon rim */
 .glass-panel::before {
   content: "";
   position: absolute;
@@ -627,31 +638,30 @@ input, select, textarea{ background: rgba(255,255,255,0.02); color:var(--ink); b
   border-radius: inherit;
   background: conic-gradient(
     from 180deg,
-    rgba(0,255,255,0.0),
-    rgba(0,255,255,0.18),
-    rgba(255,0,170,0.16),
-    rgba(140,80,255,0.14),
-    rgba(0,255,255,0.0)
+    rgba(0,180,200,0.0),
+    rgba(0,180,200,0.12),
+    rgba(140,80,255,0.10),
+    rgba(180,255,230,0.08),
+    rgba(0,180,200,0.0)
   );
-  filter: blur(18px);
-  opacity: 0.75;
-  animation: rim-shift 10s linear infinite;
+  filter: blur(14px);
+  opacity: 0.7;
+  animation: rim-shift-clean 12s linear infinite;
   pointer-events: none;
 }
 
-@keyframes rim-shift {
-  0%   { transform: rotate(0deg) scale(1.2); }
-  100% { transform: rotate(360deg) scale(1.2); }
+@keyframes rim-shift-clean {
+  0%   { transform: rotate(0deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1.1); }
 }
 
-/* Optional: reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .bg-effects::before,
   .bg-effects::after,
   .glass-panel::before {
     animation: none !important;
   }
-
+}
 
 /* ====== Binder List Grid ====== */
 .binder-list {
@@ -820,6 +830,6 @@ input, select, textarea{ background: rgba(255,255,255,0.02); color:var(--ink); b
   gap: 10px;
   justify-content: flex-end;
 }
-}
+
 
 
