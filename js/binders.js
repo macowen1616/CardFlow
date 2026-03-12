@@ -6,51 +6,83 @@ const binderNameInput = document.getElementById("binderName");
 const binderDescInput = document.getElementById("binderDesc");
 const binderImageInput = document.getElementById("binderImage");
 
-// Load saved binders from localStorage
 let binders = JSON.parse(localStorage.getItem("binders")) || [];
 
-// Render binders
 function renderBinders() {
-  binderList.innerHTML = "";
-  binders.forEach((b) => {
-    const div = document.createElement("div");
-    div.className = "binder-item";
-    div.innerHTML = `
-      <img src="${b.image || 'https://via.placeholder.com/220x150'}" alt="${b.name}" style="width:150px; border-radius:6px;">
-      <div>
-        <strong>${b.name}</strong>
-        <p>${b.desc}</p>
-      </div>
-    `;
-    binderList.appendChild(div);
-  });
+
+binderList.innerHTML = "";
+
+binders.forEach(binder => {
+
+const div = document.createElement("div");
+
+div.className = "binder-item";
+
+div.innerHTML = `
+<img src="${binder.image || 'https://via.placeholder.com/200'}">
+
+<h3>${binder.name}</h3>
+
+<p>${binder.desc}</p>
+
+<p>${binder.cards ? binder.cards.length : 0} Cards</p>
+`;
+
+binderList.appendChild(div);
+
+});
+
 }
 
-// Save binder
 saveBinderBtn.addEventListener("click", () => {
-  const name = binderNameInput.value.trim();
-  const desc = binderDescInput.value.trim();
-  const image = binderImageInput.value.trim();
-  if (!name) return alert("Binder name is required!");
-  binders.push({ name, desc, image });
 
-  // Save to localStorage
-  localStorage.setItem("binders", JSON.stringify(binders));
+const name = binderNameInput.value.trim();
+const desc = binderDescInput.value.trim();
+const image = binderImageInput.value.trim();
 
-  binderNameInput.value = "";
-  binderDescInput.value = "";
-  binderImageInput.value = "";
+if(!name){
 
-  renderBinders();
+alert("Binder name required");
+return;
+
+}
+
+const newBinder = {
+
+id: Date.now(),
+
+name,
+
+desc,
+
+image,
+
+cards: []
+
+};
+
+binders.push(newBinder);
+
+localStorage.setItem("binders", JSON.stringify(binders));
+
+binderNameInput.value = "";
+binderDescInput.value = "";
+binderImageInput.value = "";
+
+renderBinders();
+
 });
 
-// Clear all binders
 clearAllBtn.addEventListener("click", () => {
-  if (!confirm("Are you sure you want to clear all binders?")) return;
-  binders = [];
-  localStorage.removeItem("binders"); // remove saved data
-  renderBinders();
+
+if(!confirm("Delete all binders?")) return;
+
+binders = [];
+
+localStorage.removeItem("binders");
+
+renderBinders();
+
 });
 
-// Initial render on page load
 renderBinders();

@@ -522,7 +522,7 @@ body {
 
 input, select, textarea {
   background: rgba(255,255,255,0.02);
-  color: var(--ink);
+  
   border-color: rgba(255,255,255,0.04);
 }
 
@@ -532,7 +532,7 @@ input, select, textarea {
   border-color: rgba(255,255,255,0.04);
 }
 #seriesSelect option, #expansionSelect option, #editRarity option, select[name="rarity"] option {
-  background: #050714;
+  
   color: var(--ink);
 }
 
