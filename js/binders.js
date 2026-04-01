@@ -8,81 +8,80 @@ const binderImageInput = document.getElementById("binderImage");
 
 let binders = JSON.parse(localStorage.getItem("binders")) || [];
 
+// Render binders
 function renderBinders() {
 
-binderList.innerHTML = "";
+    binderList.innerHTML = "";
 
-binders.forEach(binder => {
+    binders.forEach(binder => {
 
-const div = document.createElement("div");
+        const div = document.createElement("div");
+        div.className = "binder-item";
 
-div.className = "binder-item";
+        div.innerHTML = `
+        <img 
+            src="${binder.image || 'https://via.placeholder.com/200'}"
+            alt="${binder.name} binder cover"
+            onerror="this.src='https://via.placeholder.com/200'"
+        >
 
-div.innerHTML = `
-<img src="${binder.image || 'https://via.placeholder.com/200'}">
+        <h3>${binder.name}</h3>
 
-<h3>${binder.name}</h3>
+        <p>${binder.desc}</p>
 
-<p>${binder.desc}</p>
+        <p>${binder.cards ? binder.cards.length : 0} Cards</p>
+        `;
 
-<p>${binder.cards ? binder.cards.length : 0} Cards</p>
-`;
+        binderList.appendChild(div);
 
-binderList.appendChild(div);
-
-});
+    });
 
 }
 
+// Save new binder
 saveBinderBtn.addEventListener("click", () => {
 
-const name = binderNameInput.value.trim();
-const desc = binderDescInput.value.trim();
-const image = binderImageInput.value.trim();
+    const name = binderNameInput.value.trim();
+    const desc = binderDescInput.value.trim();
+    const image = binderImageInput.value.trim();
 
-if(!name){
+    if (!name) {
+        alert("Binder name required");
+        return;
+    }
 
-alert("Binder name required");
-return;
+    const newBinder = {
+        id: Date.now(),
+        name,
+        desc,
+        image,
+        cards: []
+    };
 
-}
+    binders.push(newBinder);
 
-const newBinder = {
+    localStorage.setItem("binders", JSON.stringify(binders));
 
-id: Date.now(),
+    binderNameInput.value = "";
+    binderDescInput.value = "";
+    binderImageInput.value = "";
 
-name,
-
-desc,
-
-image,
-
-cards: []
-
-};
-
-binders.push(newBinder);
-
-localStorage.setItem("binders", JSON.stringify(binders));
-
-binderNameInput.value = "";
-binderDescInput.value = "";
-binderImageInput.value = "";
-
-renderBinders();
+    renderBinders();
 
 });
 
+// Clear all binders
 clearAllBtn.addEventListener("click", () => {
 
-if(!confirm("Delete all binders?")) return;
+    if (!confirm("Delete all binders?")) return;
 
-binders = [];
+    binders = [];
 
-localStorage.removeItem("binders");
+    localStorage.removeItem("binders");
 
-renderBinders();
+    renderBinders();
 
 });
 
+// Initial render
 renderBinders();
