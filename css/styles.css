@@ -526,14 +526,23 @@ input, select, textarea {
   border-color: rgba(255,255,255,0.04);
 }
 
-#seriesSelect, #expansionSelect, #editRarity, select[name="rarity"] {
-  background: #050714;
-  color: var(--ink);
-  border-color: rgba(255,255,255,0.04);
+select, #seriesSelect, #expansionSelect, #editRarity, select[name="rarity"] {
+  background: #e6e9f0;   /* same as page background */
+  color: #111;            /* dark text for readability */
+  border: 1px solid #ccc; /* subtle border */
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 16px;
 }
-#seriesSelect option, #expansionSelect option, #editRarity option, select[name="rarity"] option {
-  
-  color: var(--ink);
+
+#editRarity, select[name="rarity"] {
+  background: #e6e9f0; /* same neutral background as page */
+  color: #111;          /* dark text */
+  border: 1px solid #ccc;
+}
+#editRarity option, select[name="rarity"] option {
+  background: #e6e9f0;
+  color: #111;
 }
 
 /* ====== Cleaner Neon Street + Fogged Glass Background ====== */
