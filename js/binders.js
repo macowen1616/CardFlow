@@ -18,21 +18,18 @@ function renderBinders() {
         const div = document.createElement("div");
         div.className = "binder-item";
 
-        div.innerHTML = `
-        <img 
-            src="${binder.image || 'https://via.placeholder.com/200'}"
-            alt="${binder.name} binder cover"
-            onerror="this.src='https://via.placeholder.com/200'"
-        >
+div.innerHTML = `
+<img 
+    src="${binder.image || 'images/binder-placeholder.png'}"
+    alt="${binder.name} binder cover"
+    referrerpolicy="no-referrer"
+    onerror="this.src='images/binder-placeholder.png'"
+>
 
-        <h3>${binder.name}</h3>
-
-        <p>${binder.desc}</p>
-
-        <p>${binder.cards ? binder.cards.length : 0} Cards</p>
-        `;
-
-        binderList.appendChild(div);
+<h3>${binder.name}</h3>
+<p>${binder.desc}</p>
+<p>${binder.cards ? binder.cards.length : 0} Cards</p>
+`;
 
     });
 
