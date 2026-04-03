@@ -843,3 +843,27 @@ select, #seriesSelect, #expansionSelect, #editRarity, select[name="rarity"] {
 
 
 
+.menu-btn{
+display:none;
+font-size:24px;
+background:none;
+border:none;
+color:white;
+}
+
+@media (max-width:768px){
+
+.nav{
+display:none;
+flex-direction:column;
+}
+
+.nav.open{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+}
