@@ -867,3 +867,36 @@ display:block;
 }
 
 }
+/* Hamburger menu button (already in your CSS) */
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 0;
+    background: var(--panel-bg);
+    border-radius: 8px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* Optional: smooth transition for nav */
+.nav {
+  transition: all 0.3s ease;
+}

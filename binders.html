@@ -12,64 +12,62 @@
 <div class="bg-effects" aria-hidden="true"></div>
 
 <header class="topbar">
+//
+  <div class="brand">
+    <div class="logo">
+      <img src="./images/cardflow%20logo.jpeg" alt="CardFlow logo">
+    </div>
+    <span class="brand-name">CardFlow</span>
+  </div>
 
-<div class="brand">
-<div class="logo">
-<img src="./images/cardflow%20logo.jpeg" alt="CardFlow logo">
-</div>
-<span class="brand-name">CardFlow</span>
-</div>
-
-<nav class="nav">
-<a class="nav-link" href="./index.html">Home</a>
-<a class="nav-link" href="./add-card.html">Add Cards</a>
-<a class="nav-link active" href="./binders.html">Binders</a>
-</nav>
+  <nav class="nav">
+    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link" href="./add-card.html">Add Cards</a>
+    <a class="nav-link active" href="./binders.html">Binders</a>
+  </nav>
 
 </header>
 
 <main class="page glass-panel">
 
-<h1 class="page-title">Binders</h1>
+  <h1 class="page-title">Binders</h1>
 
-<section class="panel">
+  <section class="panel">
 
-<div class="panel-head">
-<h2>Your Binders</h2>
-<button class="btn danger" id="clearAll">Clear All Binders</button>
-</div>
+    <div class="panel-head">
+      <h2>Your Binders</h2>
+      <button class="btn danger" id="clearAll">Clear All Binders</button>
+    </div>
 
-<!-- Binder Creation Form -->
+    <!-- Binder Creation Form -->
+    <div id="binderForm" class="binder-form">
 
-<div id="binderForm" class="binder-form">
+      <label>
+        Binder Name:
+        <input type="text" id="binderName" placeholder="Enter binder name">
+      </label>
 
-<label>
-Binder Name:
-<input type="text" id="binderName" placeholder="Enter binder name">
-</label>
+      <label>
+        Description:
+        <input type="text" id="binderDesc" placeholder="Enter description">
+      </label>
 
-<label>
-Description:
-<input type="text" id="binderDesc" placeholder="Enter description">
-</label>
+      <label>
+        Cover Image:
+        <input type="file" id="binderImage" accept="image/*">
+        <small>Optional: Choose a local image for the binder cover</small>
+      </label>
 
-<label>
-Cover Image URL:
-<input type="text" id="binderImage" placeholder="https://example.com/image.png">
-</label>
+      <div class="form-actions">
+        <button class="btn primary" id="saveBinder">Save</button>
+      </div>
 
-<div class="form-actions">
-<button class="btn primary" id="saveBinder">Save</button>
-</div>
+    </div>
 
-</div>
+    <!-- Binder Display Area -->
+    <div id="binderList" class="binder-list"></div>
 
-<!-- Binder Display Area -->
-
-<div id="binderList" class="binder-list"></div>
-
-</section>
-
+  </section>
 
 </main>
 
